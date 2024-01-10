@@ -9,11 +9,15 @@ import { UrduClassesComponent } from './urdu/urdu-classes/urdu-classes.component
 import { UrduBookListComponent } from './urdu/urdu-book-list/urdu-book-list.component';
 import { TeacherClassesComponent } from './teacher/teacher-classes/teacher-classes.component';
 import { TeacherBookListComponent } from './teacher/teacher-book-list/teacher-book-list.component';
+import { ViewportComponent } from './viewport/viewport.component';
 
 const routes: Routes = [
   {path:'', component : HomepageComponent},
-  {path:'hindi', component : HindiClassesComponent},
-  {path:'hindiBook', component : HindiBookListComponent},
+
+  {path:'hindi', component : ViewportComponent, children :[
+    {path:'', component : HindiClassesComponent},
+    {path:'hindiBook', component : HindiBookListComponent},
+  ]},
   {path:'eng', component : EngClassesComponent },
   {path:'engBook', component : EngBookLisxComponent },
   {path:'urdu', component : UrduClassesComponent },

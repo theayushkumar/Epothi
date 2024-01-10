@@ -17,6 +17,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import { ViewportComponent } from './viewport/viewport.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -30,14 +34,19 @@ import {MatCardModule} from '@angular/material/card';
     UrduBookListComponent,
     UrduClassesComponent,
     TeacherClassesComponent,
-    TeacherBookListComponent
+    TeacherBookListComponent,
+    ViewportComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    HttpClientModule,
+    MatButtonModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
