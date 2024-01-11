@@ -10,13 +10,19 @@ import { UrduBookListComponent } from './urdu/urdu-book-list/urdu-book-list.comp
 import { TeacherClassesComponent } from './teacher/teacher-classes/teacher-classes.component';
 import { TeacherBookListComponent } from './teacher/teacher-book-list/teacher-book-list.component';
 import { ViewportComponent } from './viewport/viewport.component';
+import { OpenBookComponent } from './hindi/open-book/open-book.component';
 
 const routes: Routes = [
   {path:'', component : HomepageComponent},
 
   {path:'hindi', component : ViewportComponent, children :[
     {path:'', component : HindiClassesComponent},
-    {path:'hindiBook', component : HindiBookListComponent},
+    {path:'hindiBook', component : ViewportComponent, children:[
+      {path:'', component:HindiBookListComponent},
+      {path:'openBook', component:OpenBookComponent},
+
+    ]},
+
   ]},
   {path:'eng', component : EngClassesComponent },
   {path:'engBook', component : EngBookLisxComponent },

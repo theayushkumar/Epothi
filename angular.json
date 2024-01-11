@@ -67,12 +67,16 @@
               "browserTarget": "Epothi:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Epothi:build"
+            "browserTarget": "your-project-name:build",
+            "proxyConfig": "src/proxy.conf.json"
           }
         },
         "test": {

@@ -9,6 +9,7 @@ import { CrudService } from 'src/app/crud.service';
 })
 export class HindiBookListComponent implements OnInit{
   num : any = 1
+  books :any
   constructor(
     private _crud :CrudService,
     private _router : Router
@@ -19,6 +20,7 @@ export class HindiBookListComponent implements OnInit{
     this._crud.get_book().subscribe(
       (res:any)=>{
         console.log(res);
+        this.books =  res
       },
       (error)=>{
         console.log(error);
@@ -28,9 +30,11 @@ export class HindiBookListComponent implements OnInit{
 
 
 
-  onView(){
-
+  onView(pdf_url:any){
+    // console.log(pdf_url);
+      this._router.navigate(['hindi/hindiBook/openBook'] , pdf_url)
   }
+
   onDownlode(){
 
   }

@@ -21,6 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { ViewportComponent } from './viewport/viewport.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { OpenBookComponent } from './hindi/open-book/open-book.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
     UrduClassesComponent,
     TeacherClassesComponent,
     TeacherBookListComponent,
-    ViewportComponent
+    ViewportComponent,
+    OpenBookComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatIconModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    PdfViewerModule
     
   ],
   providers: [],
