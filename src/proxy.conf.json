@@ -1,8 +1,6 @@
-{
-    "/api/*": {
-      "target": "https://www.scert-up.in",
-      "secure": false, 
-      "changeOrigin": true,
-      "logLevel": "debug"
+  {
+    "/**": {
+    "target": "https://www.scert-up.in/EBook",
+    "secure": false
     }
-  }
+    }

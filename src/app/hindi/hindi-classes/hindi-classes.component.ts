@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CrudService } from 'src/app/crud.service';
 
 @Component({
   selector: 'app-hindi-classes',
@@ -10,17 +11,18 @@ export class HindiClassesComponent  implements OnInit{
 
 
   constructor(
-    private router : Router
+    private router : Router,
+    private  _crud:CrudService
   ){}
 
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit() {
   }
 
 
-  onBook(no:any){
+  onBook(no:any){    
     this.router.navigate(['/hindi/hindiBook'] , no)
+    this._crud.class_id.next(no)
   }
 
 

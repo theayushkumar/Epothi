@@ -14,10 +14,17 @@ export class HindiBookListComponent implements OnInit{
     private _crud :CrudService,
     private _router : Router
   ){ 
-    this.num =  this._router.getCurrentNavigation()?.extras
   }
+
   ngOnInit(): void {
-    this._crud.get_book().subscribe(
+    this._crud.class_id.subscribe(
+      (res:any)=>{
+        console.log(res);
+          this.num =  res
+      }
+    )
+    
+    this._crud.get_books(this.num,'Hindi').subscribe(
       (res:any)=>{
         console.log(res);
         this.books =  res
@@ -29,13 +36,9 @@ export class HindiBookListComponent implements OnInit{
   }
 
 
-
   onView(pdf_url:any){
     // console.log(pdf_url);
       this._router.navigate(['hindi/hindiBook/openBook'] , pdf_url)
-  }
-
-  onDownlode(){
-
+       this._crud.book_file_name.next(pdf_url)
   }
 }

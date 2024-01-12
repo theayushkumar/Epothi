@@ -11,6 +11,8 @@ import { TeacherClassesComponent } from './teacher/teacher-classes/teacher-class
 import { TeacherBookListComponent } from './teacher/teacher-book-list/teacher-book-list.component';
 import { ViewportComponent } from './viewport/viewport.component';
 import { OpenBookComponent } from './hindi/open-book/open-book.component';
+import { OpenBookEngComponent } from './english/open-book-eng/open-book-eng.component';
+import { BookOpenUrduComponent } from './urdu/book-open-urdu/book-open-urdu.component';
 
 const routes: Routes = [
   {path:'', component : HomepageComponent},
@@ -24,12 +26,29 @@ const routes: Routes = [
     ]},
 
   ]},
-  {path:'eng', component : EngClassesComponent },
-  {path:'engBook', component : EngBookLisxComponent },
-  {path:'urdu', component : UrduClassesComponent },
-  {path:'urduBook', component : UrduBookListComponent },
-  {path:'teacher', component : TeacherClassesComponent },
-  {path:'teacherBook', component : TeacherBookListComponent },
+  {path:'eng', component : ViewportComponent , children :[
+    {path:'', component :EngClassesComponent},
+    {path:'engBook', component:ViewportComponent,children:[
+        {path:'', component: EngBookLisxComponent},
+        {path:'openBook', component: OpenBookEngComponent},
+    ]},
+
+  ]
+  },
+
+  {path:'urdu', component : ViewportComponent , children :[
+    {path :'', component: UrduClassesComponent},
+    {path :'urduBook', component:UrduBookListComponent},
+    {path:'openBook', component:BookOpenUrduComponent},
+
+  ] },
+
+  {path:'teacher', component : ViewportComponent,children:[
+    {path:'',component : TeacherClassesComponent},
+    {path:'teacherBook', component:TeacherBookListComponent},
+    {path:'openBook', component:OpenBookComponent},
+
+  ] },
 ];
 
 @NgModule({

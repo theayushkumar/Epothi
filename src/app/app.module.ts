@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { OpenBookComponent } from './hindi/open-book/open-book.component';
+import { OpenBookEngComponent } from './english/open-book-eng/open-book-eng.component';
+import { BookOpenUrduComponent } from './urdu/book-open-urdu/book-open-urdu.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { OpenBookComponent } from './hindi/open-book/open-book.component';
     TeacherClassesComponent,
     TeacherBookListComponent,
     ViewportComponent,
-    OpenBookComponent
+    OpenBookComponent,
+    OpenBookEngComponent,
+    BookOpenUrduComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
@@ -9,6 +9,10 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class CrudService {
   private apiBaseUrl = 'https://www.scert-up.in';
+
+  class_id =  new BehaviorSubject<number>(1)
+  book_file_name =  new BehaviorSubject<string>('')
+
 
   constructor(
     private http: HttpClient,
@@ -29,5 +33,9 @@ export class CrudService {
 
   get_book() {
     return this.http.get(`${this.base_url}`)
+  }
+  get_books(id:any, lang:any){
+    return  this.http.get(`${this.base_url}/${id}?lang=${lang}`)
+    
   }
 }
