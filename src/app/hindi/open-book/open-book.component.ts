@@ -13,7 +13,9 @@ import { Browser } from '@capacitor/browser';
 export class OpenBookComponent implements OnInit {
   baseUrl : string = 'https://www.scert-up.in/'
   // pdfSrc: any = 'https://www.scert-up.in/EBook/गिनतारा-4.pdf'
-  pdfSrc: any = 'https://pdfobject.com/pdf/sample.pdf'
+  // pdfSrc: any = '../../../assets/book.pdf'
+  pdfSrc: any = 'https://turningbrain.in/गिनतारा-4.pdf'
+  // pdfSrc: any = 'https://pdfobject.com/pdf/sample.pdf'
   pdfFile :any
   file_name: any
   // trustedHtml!: SafeResourceUrl;
@@ -29,11 +31,12 @@ export class OpenBookComponent implements OnInit {
 
 
   ngOnInit(): void {
-    Browser.open({ url: 'https://www.scert-up.in/EBook/गिनतारा-4.pdf' });
+    // Browser.open({ url: 'https://www.scert-up.in/EBook/गिनतारा-4.pdf' });
      this._crud.book_file_name.subscribe(
       (res:any)=>{
         console.log(res);
-        this.pdfFile = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl+res);
+        // this.pdfFile = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl+res);
+        // this.pdfFile = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.scert-up.in/EBook/गिनतारा-4.pdf');
       }
      )
 
