@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/crud.service';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-hindi-book-list',
@@ -37,8 +38,13 @@ export class HindiBookListComponent implements OnInit{
 
 
   onView(pdf_url:any){
+    console.log(pdf_url);
+    
     // console.log(pdf_url);
       this._router.navigate(['hindi/hindiBook/openBook'] , pdf_url)
        this._crud.book_file_name.next(pdf_url)
+
+      //  Browser.open({ url: `https://www.scert-up.in/${pdf_url}` });
+
   }
 }

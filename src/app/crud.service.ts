@@ -34,6 +34,7 @@ export class CrudService {
   get_book() {
     return this.http.get(`${this.base_url}`)
   }
+  
   get_books(id:any, lang:any){
     return  this.http.get(`${this.base_url}/${id}?lang=${lang}`)
     

@@ -25,6 +25,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { OpenBookComponent } from './hindi/open-book/open-book.component';
 import { OpenBookEngComponent } from './english/open-book-eng/open-book-eng.component';
 import { BookOpenUrduComponent } from './urdu/book-open-urdu/book-open-urdu.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 
 
 @NgModule({
@@ -53,7 +54,9 @@ import { BookOpenUrduComponent } from './urdu/book-open-urdu/book-open-urdu.comp
     MatIconModule,
     HttpClientModule,
     MatButtonModule,
-    PdfViewerModule
+    PdfViewerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ }),
     
   ],
   providers: [],
